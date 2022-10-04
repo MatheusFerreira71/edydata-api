@@ -2,7 +2,6 @@ import 'express-async-errors';
 import express, { NextFunction, Request, Response } from 'express';
 import 'dotenv/config';
 import cors from 'cors';
-import path from 'path';
 import { CelebrateError } from 'celebrate';
 
 import morgan from 'morgan';
@@ -29,10 +28,6 @@ app.use(cors(), (req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
   next();
 });
-
-app.use(express.static('src/public'));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'public/views'));
 
 app.use(routes);
 

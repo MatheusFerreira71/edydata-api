@@ -24,7 +24,6 @@ export default function Auth(
     req.user = {
       id: Number(sub.split('/')[0]),
       access_level: Number(sub.split('/')[1]),
-      nuvem_store_id: Number(sub.split('/')[2]),
     };
     next();
   } catch (err) {
