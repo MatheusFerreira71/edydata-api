@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instalação Concluída</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .main-div {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        height: 100vh;
+        margin: 0 5rem;
+      }
+
+      .highlightButton {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        height: 48px;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        padding: 0 1rem;
+        background: #fafafa;
+        color: #a566ff;
+        box-shadow: 0 3px 28px -3px rgb(255 255 255 / 30%);
+      }
+
+      .highlightButton span {
+        background: #e11383;
+        background: linear-gradient(90deg, #e11383, #8c3bff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .highlightButton:hover {
+        text-decoration: none;
+        opacity: 0.8;
+      }
+
+      .body-bb {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body
+    class="text-center"
+    style="
+      color: #fff;
+      background: linear-gradient(
+          283.82deg,
+          rgba(0, 0, 0, 0.75) -1.42%,
+          transparent
+        ),
+        url(https://arquivos.plataformaeva.com/eva-background.jpg);
+    "
+  >
+    <main role="main" class="main-div">
+      <div>
+        <h1 class="cover-heading">Olá, seja bem vindo</h1>
+        <p class="lead" style="padding: 2rem">
+          Você acaba de instalar o aplicativo Carrinho Limitado, acesse seu
+          e-mail cadastrado na loja para concluir o seu cadastro. <br />
+          Com seu cadastro completo efetue seu primeiro acesso ao nosso painel e
+          comece a utilizar nossas ferramentas!
+        </p>
+        <p class="lead">
+          <a
+            href="https://painel.evacommerce.com.br/auth/create?email=<%= email %>"
+            class="highlightButton body-bb"
+            style="margin: auto"
+            ><span>Crie sua senha</span></a
+          >
+        </p>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

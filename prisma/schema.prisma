@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Store {
+  id                    Int      @id @default(autoincrement())
+  name                  String
+  nuvemshop_store_id    Int      @unique
+  nuvemshop_store_token String   @unique
+  nuvemshop_script_id   Int      @unique
+  nuvemshop_webhooks_id String?  @unique
+  contact_email         String?
+  nuvemshop_email       String   @unique
+  nuvemshop_domain      String   @unique
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
