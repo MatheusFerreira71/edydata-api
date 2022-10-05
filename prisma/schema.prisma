@@ -10,16 +10,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Store {
-  id                    Int      @id @default(autoincrement())
-  name                  String
-  nuvemshop_store_id    Int      @unique
-  nuvemshop_store_token String   @unique
-  nuvemshop_script_id   Int      @unique
-  nuvemshop_webhooks_id String?  @unique
-  contact_email         String?
-  nuvemshop_email       String   @unique
-  nuvemshop_domain      String   @unique
-  createdAt             DateTime @default(now())
-  updatedAt             DateTime @updatedAt
+model Client {
+  id             Int       @id @default(autoincrement())
+  nome           String
+  CPF            String    @unique
+  estadoCivil    String
+  pai            String?
+  mae            String?
+  conjuge        String?
+  rg             String?
+  salario        Decimal   @db.Decimal(19, 2)
+  especie        String
+  tituloEleitor  String?
+  sexo           String    @db.Char(1)
+  celular        String?
+  cep            String?
+  endereco       String?
+  complemento    String?
+  numero         String?
+  bairro         String?
+  email          String?   @unique
+  cidade         String?
+  dataNascimento DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model User {
+  id              Int      @id @default(autoincrement())
+  name            String
+  email           String   @unique
+  password        String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }

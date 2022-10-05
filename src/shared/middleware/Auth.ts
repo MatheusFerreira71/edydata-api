@@ -23,7 +23,6 @@ export default function Auth(
     const { sub } = decoded as TokenPayload;
     req.user = {
       id: Number(sub.split('/')[0]),
-      access_level: Number(sub.split('/')[1]),
     };
     next();
   } catch (err) {
