@@ -25,7 +25,6 @@ CREATE TABLE `Client` (
     `updatedAt` DATETIME(3) NOT NULL,
 
     UNIQUE INDEX `Client_CPF_key`(`CPF`),
-    UNIQUE INDEX `Client_email_key`(`email`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

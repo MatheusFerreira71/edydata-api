@@ -29,7 +29,7 @@ model Client {
   complemento    String?
   numero         String?
   bairro         String?
-  email          String?   @unique
+  email          String?
   cidade         String?
   dataNascimento DateTime?
   createdAt      DateTime  @default(now())

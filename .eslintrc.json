@@ -22,7 +22,8 @@
     "prettier"
   ],
   "rules": {
-    "camelcase": "off",
+    "camelcase": "warn",
+    "no-restricted-syntax": "off",
     "no-underscore-dangle": "error",
     "no-useless-constructor": "off",
     "no-param-reassign":"off",
