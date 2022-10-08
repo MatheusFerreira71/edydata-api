@@ -32,7 +32,7 @@ export default {
     file: Express.Multer.File,
     callback: FileFilterCallback,
   ): void {
-    const allowedMimes = ['.png', '.jpeg', '.jpg', '.svg', '.img', '.xml'];
+    const allowedMimes = ['.xml'];
 
     const fileType = file.originalname.substring(
       file.originalname.indexOf('.'),
