@@ -23,7 +23,7 @@ sessionsRouter.post(
   sessionsController.create,
 );
 
-sessionsRouter.post(
+sessionsRouter.put(
   '/change-password',
   celebrate({
     [Segments.BODY]: {

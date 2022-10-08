@@ -43,6 +43,6 @@ userRouter.put(
   userController.update,
 );
 
-userRouter.delete('/user/', Auth, userController.delete);
+userRouter.delete('/user', Auth, userController.delete);
 
 export default userRouter;
