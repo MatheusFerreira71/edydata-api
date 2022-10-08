@@ -94,7 +94,7 @@ export default class ClientRepository implements IClientRepository {
       by: [field],
       orderBy: {
         _count: {
-          [field]: 'asc',
+          [field]: 'desc',
         },
       },
       _count: { id: true },
