@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "303ea281-d62b-42b4-8970-7c79b5a6bd2c",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11737529"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Authenticate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"matheus@hotmail.com\",\r\n    \"password\": \"#teste#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev_url}}/authenticate",
+									"host": [
+										"{{dev_url}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"oldPassword\": \"#teste#\",\r\n    \"newPassword\": \"#Teste#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev_url}}/change-password",
+									"host": [
+										"{{dev_url}}"
+									],
+									"path": [
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Matheus Fernando Freire Ferreira\",\r\n    \"email\": \"matheus@hotmail.com\",\r\n    \"password\": \"#teste#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev_url}}/user",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Matheus Ferreira\",\r\n    \"email\": \"matheusf@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev_url}}/user",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dev_url}}/user",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev_url}}/user",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Matheus Carlos Santos\",\r\n    \"CPF\": \"12345678909\",\r\n    \"estadoCivil\": \"2\",\r\n    \"pai\": \"Célio Santos\",\r\n    \"mae\": \"Claudia Santos\",\r\n    \"conjuge\": \"Kauany Santana\",\r\n    \"rg\": \"123456789\",\r\n    \"salario\": 3254.56,\r\n    \"especie\": \"F\",\r\n    \"tituloEleitor\": \"123456789101\",\r\n    \"sexo\": \"M\",\r\n    \"celular\": \"1699999999\",\r\n    \"cep\": \"11111111\",\r\n    \"endereco\": \"Rua Santana\",\r\n    \"complemento\": \"Casa\",\r\n    \"numero\": \"1234\",\r\n    \"bairro\": \"Jardim Santana\",\r\n    \"email\": \"matheussantana@hotmail.com\",\r\n    \"cidade\": \"Santana\",\r\n    \"dataNascimento\": \"2022-10-08T14:26:37.147Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev_url}}/client",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 9067,\r\n    \"nome\": \"Matheus Carlos Santos\",\r\n    \"CPF\": \"12345678909\",\r\n    \"estadoCivil\": \"2\",\r\n    \"pai\": \"Célio Santos\",\r\n    \"mae\": \"Claudia Santos\",\r\n    \"conjuge\": \"Kauany Santana\",\r\n    \"rg\": \"123456789\",\r\n    \"salario\": 3254.56,\r\n    \"especie\": \"F\",\r\n    \"tituloEleitor\": \"123456789101\",\r\n    \"sexo\": \"M\",\r\n    \"celular\": \"1699999999\",\r\n    \"cep\": \"11111111\",\r\n    \"endereco\": \"Rua Santana\",\r\n    \"complemento\": \"Casa\",\r\n    \"numero\": \"1234\",\r\n    \"bairro\": \"Jardim Santana\",\r\n    \"email\": \"matheussantana@hotmail.com\",\r\n    \"cidade\": \"Santana\",\r\n    \"dataNascimento\": \"2022-10-08T14:26:37.147Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev_url}}/client",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dev_url}}/client/:id",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9067",
+									"description": "ID do cliente que vai ser deletado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev_url}}/client/name?offset=0&limit=10&name=Marcos",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client",
+								"name"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "Quantos itens o banco deve pular na paginação"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Limite de itens por página"
+								},
+								{
+									"key": "name",
+									"value": "Marcos",
+									"description": "Nome do cliente"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Birthdate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev_url}}/client/date?offset=0&limit=10&startDate=01/01/1960&endDate=10/10/2020",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client",
+								"date"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "Quantos itens o banco deve pular na paginação"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Limite de itens por página"
+								},
+								{
+									"key": "startDate",
+									"value": "01/01/1960",
+									"description": "Data de início"
+								},
+								{
+									"key": "endDate",
+									"value": "10/10/2020",
+									"description": "Data final"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count and Salary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev_url}}/client/count-and-salary?offset=0&limit=10&field=especie",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client",
+								"count-and-salary"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "Quantos itens o banco deve pular na paginação"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Limite de itens por página"
+								},
+								{
+									"key": "field",
+									"value": "especie",
+									"description": "Campo para agrupamento, valores aceitos: cidade, sexo, especie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev_url}}/client/:id",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4880",
+									"description": "ID do usuário"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Matheus Ferreira/Downloads/clientes.xml"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev_url}}/client/import",
+							"host": [
+								"{{dev_url}}"
+							],
+							"path": [
+								"client",
+								"import"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjUyMzgyODIsImV4cCI6MTY2NTMyNDY4Miwic3ViIjoiMSJ9.D9DdXKFibPoMHsEEfCUZR113A9iMioTsNZRJ4sUxHiQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dev_url",
+			"value": "http://localhost:3370",
+			"type": "string"
+		}
+	]
+}
