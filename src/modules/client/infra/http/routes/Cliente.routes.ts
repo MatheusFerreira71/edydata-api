@@ -92,7 +92,6 @@ clientRouter.get(
       name: Joi.string().required(),
     },
   }),
-  Auth,
   clientController.findByName,
 );
 
@@ -106,7 +105,6 @@ clientRouter.get(
       endDate: Joi.string().required(),
     },
   }),
-  Auth,
   clientController.findByBirthdate,
 );
 
@@ -119,7 +117,6 @@ clientRouter.get(
       field: Joi.string().allow('cidade', 'sexo', 'especie'),
     },
   }),
-  Auth,
   clientController.countAndSalary,
 );
 
@@ -130,7 +127,6 @@ clientRouter.get(
       id: Joi.number().integer().required(),
     },
   }),
-  Auth,
   clientController.findById,
 );
 
