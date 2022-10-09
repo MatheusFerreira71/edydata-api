@@ -87,8 +87,6 @@ clientRouter.get(
   '/client/name',
   celebrate({
     [Segments.QUERY]: {
-      offset: Joi.number().integer().required(),
-      limit: Joi.number().integer().required(),
       name: Joi.string().required(),
     },
   }),
@@ -99,8 +97,6 @@ clientRouter.get(
   '/client/date',
   celebrate({
     [Segments.QUERY]: {
-      offset: Joi.number().integer().required(),
-      limit: Joi.number().integer().required(),
       startDate: Joi.string().required(),
       endDate: Joi.string().required(),
     },
@@ -112,8 +108,6 @@ clientRouter.get(
   '/client/count-and-salary',
   celebrate({
     [Segments.QUERY]: {
-      offset: Joi.number().integer().required(),
-      limit: Joi.number().integer().required(),
       field: Joi.string().allow('cidade', 'sexo', 'especie'),
     },
   }),

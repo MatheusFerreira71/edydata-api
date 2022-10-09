@@ -240,7 +240,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev_url}}/client/name?offset=0&limit=10&name=Marcos",
+							"raw": "{{dev_url}}/client/name?name=Marcos",
 							"host": [
 								"{{dev_url}}"
 							],
@@ -249,16 +249,6 @@
 								"name"
 							],
 							"query": [
-								{
-									"key": "offset",
-									"value": "0",
-									"description": "Quantos itens o banco deve pular na paginação"
-								},
-								{
-									"key": "limit",
-									"value": "10",
-									"description": "Limite de itens por página"
-								},
 								{
 									"key": "name",
 									"value": "Marcos",
@@ -275,7 +265,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev_url}}/client/date?offset=0&limit=10&startDate=01/01/1960&endDate=10/10/2020",
+							"raw": "{{dev_url}}/client/date?startDate=01/01/1999&endDate=10/10/2020",
 							"host": [
 								"{{dev_url}}"
 							],
@@ -285,18 +275,8 @@
 							],
 							"query": [
 								{
-									"key": "offset",
-									"value": "0",
-									"description": "Quantos itens o banco deve pular na paginação"
-								},
-								{
-									"key": "limit",
-									"value": "10",
-									"description": "Limite de itens por página"
-								},
-								{
 									"key": "startDate",
-									"value": "01/01/1960",
+									"value": "01/01/1999",
 									"description": "Data de início"
 								},
 								{
@@ -315,7 +295,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{dev_url}}/client/count-and-salary?offset=0&limit=10&field=especie",
+							"raw": "{{dev_url}}/client/count-and-salary?field=sexo",
 							"host": [
 								"{{dev_url}}"
 							],
@@ -325,18 +305,8 @@
 							],
 							"query": [
 								{
-									"key": "offset",
-									"value": "0",
-									"description": "Quantos itens o banco deve pular na paginação"
-								},
-								{
-									"key": "limit",
-									"value": "10",
-									"description": "Limite de itens por página"
-								},
-								{
 									"key": "field",
-									"value": "especie",
+									"value": "sexo",
 									"description": "Campo para agrupamento, valores aceitos: cidade, sexo, especie"
 								}
 							]

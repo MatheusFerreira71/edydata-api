@@ -35,61 +35,32 @@ export default class ClientRepository implements IClientRepository {
     return client;
   }
 
-  public async findByName(
-    offset: number,
-    limit: number,
-    name: string,
-  ): Promise<[Client[], number]> {
-    const elements = prisma.client.count({
+  public async findByName(name: string): Promise<Client[]> {
+    const clients = await prisma.client.findMany({
       where: { nome: { contains: name } },
     });
-
-    const clients = prisma.client.findMany({
-      skip: offset,
-      take: limit,
-      where: { nome: { contains: name } },
-    });
-
-    const responses = await Promise.all([clients, elements]);
 
     await prisma.$disconnect();
 
-    return responses;
+    return clients;
   }
 
   public async findByBirthDateRage(
-    offset: number,
-    limit: number,
     startDate: Date,
     endDate: Date,
-  ): Promise<[Client[], number]> {
-    const elements = prisma.client.count({
+  ): Promise<Client[]> {
+    const clients = await prisma.client.findMany({
       where: { dataNascimento: { gte: startDate, lte: endDate } },
     });
-
-    const clients = prisma.client.findMany({
-      skip: offset,
-      take: limit,
-      where: { dataNascimento: { gte: startDate, lte: endDate } },
-    });
-
-    const responses = await Promise.all([clients, elements]);
 
     await prisma.$disconnect();
 
-    return responses;
+    return clients;
   }
 
   public async findCountAndTotalSalary(
-    offset: number,
-    limit: number,
     field: IGroupFilterKeys,
-  ): Promise<[ICountAndSalaryDTO, number]> {
-    const elements = await prisma.client.groupBy({
-      by: [field],
-      where: { [field]: { notIn: [''] } },
-    });
-
+  ): Promise<ICountAndSalaryDTO> {
     const countAndSalaryByField = await prisma.client.groupBy({
       by: [field],
       orderBy: {
@@ -100,13 +71,11 @@ export default class ClientRepository implements IClientRepository {
       _count: { id: true },
       _sum: { salario: true },
       where: { [field]: { notIn: [''] } },
-      skip: offset,
-      take: limit,
     });
 
     await prisma.$disconnect();
 
-    return [countAndSalaryByField, elements.length];
+    return countAndSalaryByField;
   }
 
   public async importData(data: ICreateClientDTO[]): Promise<number> {

@@ -148,15 +148,11 @@ export default class ClientController {
   public async findByName(req: Request, res: Response): Promise<Response> {
     const clientRepo = new ClientRepository();
 
-    const { offset, limit, name } = req.query;
+    const { name } = req.query;
 
     const findByName = new FindClientsByNameService(clientRepo);
 
-    const clients = await findByName.execute(
-      Number(offset),
-      Number(limit),
-      String(name),
-    );
+    const clients = await findByName.execute(String(name));
 
     return res.json(clients);
   }
@@ -164,13 +160,11 @@ export default class ClientController {
   public async findByBirthdate(req: Request, res: Response): Promise<Response> {
     const clientRepo = new ClientRepository();
 
-    const { offset, limit, startDate, endDate } = req.query;
+    const { startDate, endDate } = req.query;
 
     const findByBirthdate = new FindClientsByBirthDateService(clientRepo);
 
     const clients = await findByBirthdate.execute(
-      Number(offset),
-      Number(limit),
       new Date(String(startDate)),
       new Date(String(endDate)),
     );
@@ -180,7 +174,7 @@ export default class ClientController {
 
   public async countAndSalary(req: Request, res: Response): Promise<Response> {
     const clientRepo = new ClientRepository();
-    const { offset, limit, field } = req.query;
+    const { field } = req.query;
 
     const countAndSalary = new FindCountAndTotalSalaryService(clientRepo);
 
@@ -188,11 +182,7 @@ export default class ClientController {
       throw new AppError('Campo field informado incorretamente', 409);
     }
 
-    const clients = await countAndSalary.execute(
-      Number(offset),
-      Number(limit),
-      field,
-    );
+    const clients = await countAndSalary.execute(field);
 
     return res.json(clients);
   }

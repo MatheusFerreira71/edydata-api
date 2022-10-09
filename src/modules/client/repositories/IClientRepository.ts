@@ -9,21 +9,8 @@ export default interface IClientRepository {
   update(id: number, data: IUpdateClientDTO): Promise<Client>;
   delete(id: number): Promise<string>;
   findById(id: number): Promise<Client | null>;
-  findByName(
-    offset: number,
-    limit: number,
-    name: string,
-  ): Promise<[Client[], number]>;
-  findByBirthDateRage(
-    offset: number,
-    limit: number,
-    startDate: Date,
-    endDate: Date,
-  ): Promise<[Client[], number]>;
-  findCountAndTotalSalary(
-    offset: number,
-    limit: number,
-    field: IGroupFilterKeys,
-  ): Promise<[ICountAndSalaryDTO, number]>;
+  findByName(name: string): Promise<Client[]>;
+  findByBirthDateRage(startDate: Date, endDate: Date): Promise<Client[]>;
+  findCountAndTotalSalary(field: IGroupFilterKeys): Promise<ICountAndSalaryDTO>;
   importData(data: ICreateClientDTO[]): Promise<number>;
 }
