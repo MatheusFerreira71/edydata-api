@@ -23,6 +23,7 @@
   ],
   "rules": {
     "camelcase": "warn",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "no-restricted-syntax": "off",
     "no-underscore-dangle": "error",
     "no-useless-constructor": "off",

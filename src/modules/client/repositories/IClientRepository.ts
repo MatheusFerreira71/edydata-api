@@ -9,6 +9,7 @@ export default interface IClientRepository {
   update(id: number, data: IUpdateClientDTO): Promise<Client>;
   delete(id: number): Promise<string>;
   findById(id: number): Promise<Client | null>;
+  findByCPF(CPF: string): Promise<Client | null>;
   findByName(name: string): Promise<Client[]>;
   findByBirthDateRage(startDate: Date, endDate: Date): Promise<Client[]>;
   findCountAndTotalSalary(field: IGroupFilterKeys): Promise<ICountAndSalaryDTO>;

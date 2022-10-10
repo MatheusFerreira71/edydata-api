@@ -9,6 +9,12 @@ export default class CreateClientService {
   }
 
   public async execute(data: ICreateClientDTO): Promise<Client> {
+    const hasClient = await this.clientRepo.findByCPF(data.CPF);
+
+    if (hasClient) {
+      throw new AppError('CPF já existente', 409);
+    }
+
     const client = await this.clientRepo.create(data).catch(err => {
       throw new AppError(`${err}`);
     });

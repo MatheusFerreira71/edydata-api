@@ -39,6 +39,7 @@ Instale com yarn
 ## Rodando os testes
 
 Para rodar os testes, rode o seguinte comando
+Importante: Rodar testes apenas com o banco de dados funcionando.
 
 ```bash
   npm run test

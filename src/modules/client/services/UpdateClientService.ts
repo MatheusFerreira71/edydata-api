@@ -15,6 +15,14 @@ export default class UpdateClientService {
       throw new AppError('Cliente não encontrado', 404);
     }
 
+    if (data.CPF) {
+      const hasCpf = await this.clientRepo.findByCPF(data.CPF);
+
+      if (hasCpf && client.id !== hasCpf.id) {
+        throw new AppError('CPF já cadastrado em outra conta', 409);
+      }
+    }
+
     const updatedClient = await this.clientRepo.update(id, data).catch(err => {
       throw new AppError(`${err}`);
     });

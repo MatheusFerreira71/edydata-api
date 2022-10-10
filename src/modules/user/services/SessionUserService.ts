@@ -9,7 +9,7 @@ interface IRequest {
   email: string;
   password: string;
 }
-interface IResponse extends User {
+export interface AuthenticatedUser extends User {
   token: string;
 }
 export default class AuthenticateUserService {
@@ -21,7 +21,10 @@ export default class AuthenticateUserService {
     this.hashProvider = hashProvider;
   }
 
-  public async execute({ email, password }: IRequest): Promise<IResponse> {
+  public async execute({
+    email,
+    password,
+  }: IRequest): Promise<AuthenticatedUser> {
     const user = await this.userRepository.findByEmail(email);
 
     if (!user) {

@@ -35,6 +35,13 @@ export default class ClientRepository implements IClientRepository {
     return client;
   }
 
+  public async findByCPF(CPF: string): Promise<Client | null> {
+    const client = await prisma.client.findUnique({ where: { CPF } });
+
+    await prisma.$disconnect();
+    return client;
+  }
+
   public async findByName(name: string): Promise<Client[]> {
     const clients = await prisma.client.findMany({
       where: { nome: { contains: name } },
